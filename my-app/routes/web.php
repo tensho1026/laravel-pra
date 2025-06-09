@@ -24,6 +24,21 @@ Route::get('/posts',[
 Route::get('/posts2',[
     PostController::class,'index2']);
 
+Route::get('/posts3',[
+    PostController::class,'indexNomalSql']);
+
+Route::post('/posts/create/nomalsql',[
+    PostController::class,'createPostWithNomalSql']);
+
+Route::post('/posts/update/nomalsql',[
+    PostController::class,'updatePostWithNomalSql']);
+
+Route::post('/posts/delete/nomalsql',[
+    PostController::class,'deletePostWithNomalSql']);
+
+Route::post('/posts/bulk/nomalsql',[
+    PostController::class,'createBulkPostWithNomalSql']);
+
 Route::post('/posts',[
     PostController::class,'store']);
 

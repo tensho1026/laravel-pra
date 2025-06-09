@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -29,6 +30,52 @@ class PostController extends Controller
         ];
         return view('posts.index2',['posts'=>$posts]);
     }
+
+    public function indexNomalSql()
+    {
+        $post = new Post();
+        $posts = $post->getPostsWithNomalSql();
+        return $posts;
+    }
+
+    public function createPostWithNomalSql()
+    {
+        $dummyData = (object) [
+            'user_id' => 1,
+            'title' => '素のSQLで新しい投稿',
+            'body' => '素のSQLで新しい投稿の内容です。'
+        ];
+        // dd($dummyData);
+        $post = new Post();
+        $posts = $post->createPostWithNomalSql($dummyData);
+       
+    }
+
+    public function updatePostWithNomalSql()
+    {
+        $dummyData = (object) [
+            'id' => 12,
+            'title' => '更新された投稿',
+            'body' => '更新された投稿の内容です。'
+        ];
+        $post = new Post();
+        $posts = $post->upodatePostWithNomalSql($dummyData);
+    }
+
+    public function deletePostWithNomalSql()
+    {
+        $dummyData = (object) [
+            'id' => 12,
+        ];
+        $post = new Post();
+        $posts = $post->deletePostWithNomalSql($dummyData);
+    }   
+    public function createBulkPostWithNomalSql()
+    {
+        $post = new Post();
+        $posts = $post->createBulkPostWithNomalSql();
+    }
+
     /**
      * Show the form for creating a new resource.
      */

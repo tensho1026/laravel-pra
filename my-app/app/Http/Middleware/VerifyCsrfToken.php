@@ -12,6 +12,9 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        //
+        '/posts/create/nomalsql',
+        '/posts/update/nomalsql',
+        '/posts/delete/nomalsql',
+        '/posts/bulk/nomalsql',
     ];
 }
