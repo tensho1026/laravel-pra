@@ -76,6 +76,86 @@ class PostController extends Controller
         $posts = $post->createBulkPostWithNomalSql();
     }
 
+    public function createPostWithQueryBuilder()
+    {
+        $dummyData = (object) [
+            'user_id' => 1,
+            'title' => 'クエリービルダーで新しい投稿',
+            'body' => 'クエリービルダーで新しい投稿の内容です。'
+        ];
+        $post = new Post();
+        $posts = $post->createPostWithQueryBuilder($dummyData);
+    }
+
+    public function getPostWithQueryBuilder()
+    {
+        $post = new Post();
+        $posts = $post->getPostWithQueryBuilder();
+        return $posts;
+    }
+
+    public function updatePostWithQueryBuilder()
+    {
+        $dummyData = (object) [
+            'id' => 16,
+            'title' => '更新された投稿',
+            'body' => '更新された投稿の内容です。'
+        ];
+        $post = new Post();
+        $posts = $post->updatePostWithQueryBuilder($dummyData);
+    }
+
+    public function deletePostWithQueryBuilder()
+    {
+        $dummyData = (object) [
+            'id' => 19,
+        ];
+        $post = new Post();
+        $posts = $post->deletePostWithQueryBuilder($dummyData);
+    }
+
+    public function getPostByFilter()
+    {
+        $post = new Post();
+        $posts = $post->getPostByFilter();
+        return $posts;
+    }
+
+    public function getCountPost()
+    {
+        $post = new Post();
+        $count = $post->getCountPost();
+        return $count;
+    }
+
+    public function getPostAndUserWithQueryBuilder()
+    {
+        $post = new Post();
+        $posts = $post->getPostAndUserWithQueryBuilder();
+        return $posts;
+    }
+
+    public function getPostAndUserWithQueryBuilderBySubQuery()
+    {
+        $post = new Post();
+        $posts = $post->getPostAndUserWithQueryBuilderBySubQuery();
+        return $posts;
+    }
+
+    public function getPostWithEloquent()
+    {
+        $post = new Post();
+        $posts = $post->getPostWithEloquent();
+        return $posts;
+    }
+
+    public function getPostWithEloquentById()
+    {
+        $post = new Post();
+        $posts = $post->getPostWithEloquentById(1);
+        return $posts;
+    }
+
     /**
      * Show the form for creating a new resource.
      */

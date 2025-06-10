@@ -16,5 +16,14 @@ class VerifyCsrfToken extends Middleware
         '/posts/update/nomalsql',
         '/posts/delete/nomalsql',
         '/posts/bulk/nomalsql',
+        '/posts/create/querybuilder',
+        '/posts/get/querybuilder',
+        '/posts/update/querybuilder',
+        '/posts/delete/querybuilder',
+        '/posts/filter/querybuilder',
+        '/posts/count/querybuilder',
+        '/posts/user/querybuilder',
+        '/posts/eloquent',
+        '/posts/eloquent/{id}'
     ];
 }

@@ -39,6 +39,35 @@ Route::post('/posts/delete/nomalsql',[
 Route::post('/posts/bulk/nomalsql',[
     PostController::class,'createBulkPostWithNomalSql']);
 
+Route::post('/posts/create/querybuilder',[
+    PostController::class,'createPostWithQueryBuilder']);
+
+Route::get('/posts/get/querybuilder',[
+    PostController::class,'getPostWithQueryBuilder']);
+
+Route::post('/posts/update/querybuilder',[
+    PostController::class,'updatePostWithQueryBuilder']);
+
+Route::post('/posts/delete/querybuilder',[
+    PostController::class,'deletePostWithQueryBuilder']);
+
 Route::post('/posts',[
     PostController::class,'store']);
 
+Route::get('/posts/filter/querybuilder',[
+    PostController::class,'getPostByFilter']);
+
+Route::get('/posts/count/querybuilder',[
+    PostController::class,'getCountPost']);
+
+// Route::get('/posts/user/querybuilder',[
+//     PostController::class,'getPostAndUserWithQueryBuilder']);
+
+Route::get('/posts/user/querybuilder',[
+    PostController::class,'getPostAndUserWithQueryBuilderBySubQuery']);
+
+Route::get('/posts/eloquent',[
+    PostController::class,'getPostWithEloquent']);
+
+Route::get('/posts/eloquent/{id}',[
+    PostController::class,'getPostWithEloquentById']);
