@@ -156,60 +156,6 @@ class PostController extends Controller
         return $posts;
     }
 
-    public function createPostWithEloquent()
-    {
-        $dummyData = (object) [
-            'user_id' => 1,
-            'title' => 'Eloquentで新しい投稿',
-            'body' => 'Eloquentで新しい投稿の内容です。'
-        ];
-        $post = new Post();
-        $posts = $post->createPostWithEloquent($dummyData);
-        return $posts;
-    }
-
-    public function updatePostWithEloquent()
-    {
-        $dummyData = (object) [
-            'id' => 21,
-            'title' => 'Eloquentで更新された投稿',
-            'body' => 'Eloquentで更新された投稿の内容です。'
-        ];
-        $post = new Post();
-        $posts = $post->updatePostWithEloquent($dummyData);
-        return $posts;
-    }
-
-    public function deletePostWithEloquent()
-    {
-        $dummyData = (object) [
-            'id' => 21,
-        ];
-        $post = new Post();
-        $posts = $post->deletePostWithEloquent($dummyData);
-        return $posts;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /**
      * Show the form for creating a new resource.
      */

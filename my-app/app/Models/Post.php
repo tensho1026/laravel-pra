@@ -10,18 +10,6 @@ class Post extends Model
 {
     use HasFactory;
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function tags()
-    {
-        return $this->belongsToMany(Tag::class);
-    }
-
-
-
     public function createPost($data)
     {
         $post = new Post();
@@ -144,32 +132,6 @@ class Post extends Model
     public function getPostWithEloquentById($id)
     {
         $post = Post::find($id);
-        return $post;
-    }
-
-    public function createPostWithEloquent($data)
-    {
-        $post = new Post();
-        $post->user_id = $data->user_id;
-        $post->title = $data->title;
-        $post->body = $data->body;
-        $post->save();
-        return $post;
-    }
-
-    public function updatePostWithEloquent($data)
-    {
-        $post = Post::find($data->id);
-        $post->title = $data->title;
-        $post->body = $data->body;
-        $post->save();
-        return $post;
-    }
-
-    public function deletePostWithEloquent($data)
-    {
-        $post = Post::find($data->id);
-        $post->delete();
         return $post;
     }
 }
