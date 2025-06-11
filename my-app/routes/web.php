@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,3 +72,15 @@ Route::get('/posts/eloquent',[
 
 Route::get('/posts/eloquent/{id}',[
     PostController::class,'getPostWithEloquentById']);
+
+Route::post('/posts/eloquent/create',[
+    PostController::class,'createPostWithEloquent']);
+
+Route::post('/posts/eloquent/update',[
+    PostController::class,'updatePostWithEloquent']);
+
+Route::post('/posts/eloquent/delete',[
+    PostController::class,'deletePostWithEloquent']);
+
+Route::get('/users/{id}',[
+    User::class,'getUserById']);
